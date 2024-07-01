@@ -1,3 +1,18 @@
+try:
+    import os
+    import sys
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '..\\legacy'
+            )
+        )
+    )
+except:
+    raise
+
 import unittest
 from calculator import sum, subtraction
 
@@ -53,4 +68,5 @@ class TestCalculator(unittest.TestCase):
             subtraction(2, '2')
 
 
-unittest.main(verbosity=2)
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

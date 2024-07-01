@@ -10,7 +10,20 @@ Part 2 - Create the code and get the test to PASS
 REFACTOR
 Parte 3 - Improve my code
 """
+try:
+    import os
+    import sys
 
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '..\\tdd'
+            )
+        )
+    )
+except:
+    raise
 import unittest
 from baconandeggs import bacon_and_eggs
 
@@ -65,4 +78,5 @@ class TestBaconAndEggs(unittest.TestCase):
                                  )
 
 
-unittest.main(verbosity=2)
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
